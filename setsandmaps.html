@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sets&Maps</title>
+</head>
+<body>
+    <script>
+        //SETS
+
+        //method to create set //add,has,delete,size,clear
+        const fruits=new Set();
+        fruits.add("apple")   //adding values to fruits
+        fruits.add("banana")
+        fruits.add("orange")
+        fruits.add("apple")
+        console.log(fruits)
+        console.log(fruits.has("apple")) //checking 
+        console.log(fruits.size)       //size of set istundi 
+        console.log(fruits.delete("apple")) //deleting
+        // let a=fruits.clear  // mottam fruits ni delete chestundi
+        // console.log(a)
+
+        //using for of 
+        for ( let i of fruits){
+            console.log(i)
+        }
+        //forEach
+        fruits.forEach(value=>{
+            console.log(value)
+        })
+        //sets lo unique values store chestam deniki indexing vundadu,anduke for loop for in loop work avvavu manam array loki convert cheskuni use cheskovachu
+
+        //using for
+        let usingfor=Array.from(fruits)
+        for(let k=0;k<usingfor.length;k++){
+            console.log(usingfor[k])
+        }
+        //using for in
+        const hold=Array.from(fruits)
+         for ( let j in hold){
+            console.log(hold[j])
+        }
+
+        //Another method to create set
+        let names=new Set(["geetha","somu","sri","sonu","nandu"])
+        console.log([...names.values()])//output:['geetha', 'somu', 'sri', 'sonu', 'nandu']
+        console.log(names.keys())//output:{'geetha', 'somu', 'sri', 'sonu', 'nandu'}
+        console.log(names.entries())//output:{'geetha' => 'geetha', 'somu' => 'somu', 'sri' => 'sri', 'sonu' => 'sonu', 'nandu' => 'nandu'}
+
+        let obj={a:1,b:4,c:9}
+        let objfromsets=new Set(Object.keys(obj))
+        console.log(objfromsets)
+
+        //set Logic Methods
+        const A=new Set(['a','b','c',])
+        const B=new Set(['e','f','a','b',])
+        console.log(A.union(B)) //output:{'a', 'b', 'c', 'e', 'f'}
+        console.log(A.intersection(B))//output:{'a', 'b'}
+        console.log(A.difference(B))//output:{'c'}
+        console.log(B.difference(A))//output:{'e', 'f'}
+        console.log(A.isSubsetOf(B))//output:false (B lo nunchi A vachinda)
+        console.log(A.isSupersetOf(B))//output:false (B lo vunnavi anni A lo vunnaya)
+        console.log(A.isDisjointFrom(B))//output:false (A ,B lo common elements chustade ,common vunnaye anduke false ,common emi lekapotey true )
+
+        //MAPS
+     //stroing in key value pairs but here the key can be anydata type is accepted
+        const usermap=new Map();  //set,get,has,delete,clear,size
+        usermap.set("name","geetha")
+        usermap.set("age",55)
+        usermap.set(4,"favnum")
+        usermap.set(true,"boolean")
+        console.log(usermap.get("name")) //output:geetha
+        console.log(usermap.get(true)) //output:boolean
+        console.log(usermap.get(4)) //output favnum
+        console.log(usermap.has("age")) //true
+        console.log(usermap.size)//4
+        console.log(usermap.delete("age"))//true
+        console.log(usermap.get("age"))//undefined
+        console.log(usermap.clear())
+        console.log(usermap)//size:0
+
+        //another method to create map
+        const map1=new Map([
+            ["name","doraemon"],
+            ["age","infinite"],
+            [1000,"gadgets"],
+            [true,"robot"],
+        ])
+        console.log(map1.keys())//{'name', 'age', 1000, true}
+        console.log(map1.values())// {'doraemon', 'infinite', 'gadgets', 'robot'}
+        console.log(map1.entries())//{'name' => 'doraemon', 'age' => 'infinite', 1000 => 'gadgets', true => 'robot'}
+
+        //loops
+        //for loop
+        for (let [key,value]of map1){
+            console.log(key,value)
+            // console.log(key)
+            // console.log(value)
+        }
+        //forEach
+         map1.forEach((value,key)=>{     //In Map’s forEach, first parameter is value, second is key
+            console.log(key,value)
+         })
+         //for loop
+         let change=Array.from(map1)  //changing to array for loop and for in loop index medha work chestaye ikada objects lo indexing vundadu so manam array loki convert cheskovali
+         for (let g=0;g<change.length;g++){
+            console.log(change[g])
+         }
+         //for in loop
+         for (let f in change){
+            console.log(change[f])
+         }
+
+
+         //conversions 
+         let set1=new Set([3,"hi",88,true])   // Array -> set 
+
+         let arr=[...set1]                    //Set -> Array
+         let arr2=Array.from(arr)
+
+         let convert=new  Map(Object.entries({a:1,b:2}))  // Object -> Map
+         
+
+         let arr3=[...map2]                  // Map -> Array
+         //or
+         let arr4=Array.from(map2)          //both are performing same 
+
+         let objectu=Object.fromEntries(map1)   // Map -> Object
+
+    </script>    
+</body>
+</html>
