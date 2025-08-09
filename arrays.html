@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <script>
+        //Array Methods
+        const arr=["apple",6,"banana","hyd"]   //length
+        console.log(arr.length)
+        // arr.length=2  //giving length to it
+        // console.log(arr)
+        console.log(arr.toString())          //toString()
+        console.log(arr.at(2))               //at()
+        console.log(arr[2])
+        console.log(arr.at(-1))            //givig last element
+        console.log(arr.join("*"))          //join()
+        console.log(arr.pop())              //deleted the last element which gives output as a deleted element
+        console.log(arr)
+        console.log(arr.push("kiwi"))      //adds element at last and give output as new length of array
+        console.log(arr)
+        console.log(arr.shift())          //removes the first element and give output as deleted element
+        console.log(arr)
+        console.log(arr.unshift("geetha"))  //adds element at beginning and give output as newlength of array
+        arr[0]="grapes"     //changing the existing element
+        console.log(arr)
+        arr[arr.length]="orange" //pushing element to the last using length
+        console.log(arr)
+        delete arr[1]           //deleting
+        console.log(arr)
+        const arr1=["somu","sri",66,true,false]
+        console.log(arr.concat(arr1))         //merging two arrays
+        console.log(arr.concat("fruits"))     //merging by taking value directly
+       //syntax:array.copyWithin(target,start,end)
+        arr.copyWithin(2,0)                //copying elements
+        console.log(arr) ;
+        const arr2=[1,2,[3,4,[5,6]]];
+        console.log(arr2.flat());
+        console.log(arr2.flat(2));
+       console.log( arr2.flatMap(x=>[x,x*10]))
+       //syntax:splice(startIndex,deleteCount,item1,item2,...)
+       arr.splice(1,0 ,"hii","hello") //splicing add,remove or replacing
+       console.log(arr)  //adding
+        let removed=arr.splice(1,2,"geetha","somu")  //replacing
+       console.log(arr)  //original array lo values replace chestade 
+       console.log(removed) //gives the removed elements
+       let anothermethod=arr.toSpliced(1,2,99,100)
+       console.log(arr)//original array ni return chestundi
+       console.log(anothermethod) // change ayyina  array ni print chestundi 
+       console.log(arr1.slice(1))  //gives new array
+       console.log(arr1.slice(1,3))
+
+       //Array Search Methods
+       const fruits=["apple","mango","banana","apple","kiwi"]
+       console.log(fruits.indexOf("apple")+1)   //indexOf
+       console.log(fruits.lastIndexOf("apple")+1)
+       console.log(fruits.includes("mango"))
+
+       //Array Sort
+       const words=["apple","mango","banana","apple","kiwi"]
+    //    let a=words.sort()   //original ni change chestade sorted array direct echestade
+    //    console.log(words)   //sorted array istade
+       let b=words.toSorted()  //original ni change cheyadu sort ayyindi print avvali antey b ni print cheyyali
+       console.log(words)    // original array istade
+       console.log(b)       //sorted array istade
+       console.log(words.reverse())
+       console.log(words.toReversed())
+       const numbers=[5,7,1,9,2,7,3]
+       console.log(numbers.sort())
+       console.log(numbers.reverse())
+       console.log(Math.max(10,4,70))
+       console.log(Math.min(10,4,70))
+       
+       const ashish=[1,3,4,5,6,7]
+       ashish[2]="sri"
+    //    ashish.splice(2,1,"geetha")
+       console.log(ashish)
+       
+
+    //    //iterations
+       const array=[1,2,"geetha","somu",true]
+///keys
+       for(let index of array.keys()){
+        console.log(index)  
+       }
+//values
+       for(let values of array.values()){
+        console.log(values)  
+       }
+
+//entries
+       for(let entry of array.entries()){
+        console.log(entry)  
+       }
+       
+//using for loop
+       for(let i=0;i<array.length;i++){
+        console.log(array[i])
+       }
+//using for of loop
+       for(let j of array){
+        console.log(j)
+       }
+//using for in loop
+       for (let k in array){
+        console.log(array[k])
+       }
+//using for each loop
+       array.forEach(item=>{
+        console.log(item)
+       })
+//using map
+       array.map((item)=>{
+        console.log(item*2)
+       })
+//using filter method
+       let nums=[1,4,5,6,7]
+       let evennums=nums.filter(item=>{
+        return item%2===0;
+       })
+       console.log(evennums)
+//using reduce method
+       let sum=nums.reduce((a,b)=>{    //(accumulator,current value)
+        return a+b
+       },0)
+       console.log(sum)
+
+    //spread operator
+    const array1=[1,2,3]    
+    const array2=[4,5,6]
+    const array3=[...array1,...array2]   //used to join two arrays
+    console.log(array3)
+    const array4=[...array1]
+    console.log(array4)               //used to copy an array 
+    let minvalue=Math.min(...array1)  //used to pass an array elements to a function
+    console.log(minvalue)
+
+    //rest operator
+     const array5=[1,2,3,4,5,5,6,7]
+     const[a,...rest]=array5        //used as destruct an array
+     console.log(rest)
+
+     //every 
+     let allover10=array5.every(value=>{   //checks if all array values pass a test means vale>10
+        return value>10
+     })
+     console.log(allover10) 
+
+     //some
+     let allover5=array5.some(value=>{   //checks if osme array values pass a test 
+        return value>5
+     })
+     console.log(allover5)
+
+     //from
+     let text="geetha sri somu"
+     console.log(Array.from(text)) // string ni array la convert chestade
+     console.log([...text]) //ila kuda convert cheyyachu
+     console.log(text.split('')) //another method 
+     console.log(Array.from([1,2,3],x=>x*2))//from use chese mapp chestunam
+
+     //find and findindex
+     const numbers1=[2,3,4,5,6,8]
+     console.log(numbers1.find(num=>num>4)) //return first element that matches the condition output:5
+     console.log(numbers1.findIndex(num=>num>4)) //return first element index that matches the condition output:3
+
+     //fill
+     const arrfill=[2,4,5,6]
+     arrfill.fill(0,1,3)  //syntax:(value em fill avvali,start,end)
+     console.log(arrfill)
+     //Array.of and array.isarray()
+     let stringg="geetha sri somu"
+     console.log(stringg) //output: geetha sri somu
+    let value= (Array.of(stringg))
+    console.log(value)  //output:['geetha sri somu'] ,array loki convert chestundi
+    console.log(value.toString()) //array ni malli string loki convert chestunna
+    console.log(Array.isArray(stringg))//output:false
+    console.log(Array.isArray(value)) //output:true
+//using with
+const usingwith=[2,5,6,7,9] //syntax:(arrayname.with(index,value))
+console.log(usingwith.with(2,229)) //replace cheyadaniki splice use chestam direct ga index dwara use chestam with use chese kuda replace cheyyachu
+  </script>    
+</body>
+</html>
