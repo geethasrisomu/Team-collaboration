@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic&control flow</title>
+</head>
+<body>
+    <script>
+        //Booleans
+        let isonline=true;
+        let isloading=false;
+        console.log(isonline)
+        console.log(isloading)
+
+        console.log(10>5);
+        console.log(2>5);
+        console.log(3=="3");
+        console.log(3==="3")
+        console.log(4!==2)
+
+        let isyes=true
+        if(isyes){
+            console.log("ha yes")
+        }
+        else{
+            console.log("nope")
+        }
+
+        let isOnlinee=true
+        if(!isOnlinee){
+            console.log("ha yes")
+        }
+        else{
+            console.log("fail")
+        }
+
+        let x=false;
+        let y= new Boolean(false);
+        console.log(typeof x ,typeof y)
+        //comparisons
+        let a=10;
+        let b="10";
+        console.log(a==b);
+        console.log(a===b);
+        console.log(a!=b);
+        console.log(a!==b);
+        console.log(a>5);
+        console.log(a<=10);
+        //Logical Operators
+        //logical and
+        let age=25;
+        let id=true;
+        if(age>=18 && id){
+            console.log("access permitted")
+        }
+        else{
+            console.log("denied")
+        }
+        //logical or
+        let isweekend=false;
+        let isholiday=true;
+        if(isweekend||isholiday){
+            console.log("yahoo")
+        }
+        //logical not
+        let isboy=false;
+        if(!isboy){
+            console.log("yes iam")
+        }else{
+            console.log("non iam not")
+        }
+        //Ternary 
+        let isgirl=true;
+        console.log(isgirl?"welcome":"you are not allowed")
+        //if else
+        let marks=85;
+        if(marks>=90){
+            console.log("Grade:A");
+        }
+        else if(marks>=70){
+            console.log("Grade:B");
+        }
+        else if(marks>=50){
+            console.log("Grade:C");
+        }
+        else if(marks>=30){
+            console.log("Grade:D");
+        }
+        else{
+            console.log("Grade:F");
+        }
+        //switch
+        let grade="C";
+        switch(grade){
+            case"A":console.log("Excellent");
+            break;
+            case"B":console.log("Good job");
+            break;
+            case"C":console.log("Good");
+            break;
+            case"D":console.log("Ok");
+            break;
+            case"E":console.log("avg");
+            
+        }
+    </script>  
+</body>
+</html>
