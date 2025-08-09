@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body>
+    <h1>hey geetha</h1>
+    <p id="one">yess</p>
+    <p class="clas">hii </p>
+    <p class="clas"> how </p>
+    <p class="clas">are you</p>
+
+    <form id="form">
+        <input  type="text" name="username" placeholder="Enter your name"/><br>
+        <br>
+        <input  type="password"name="password"placeholder="Enter your password"/><br>
+        <br>
+        <input type="submit" value="login">
+    </form>
+
+    <p id="color">i want to change my colour</p>
+    <button onclick="colour()">ChangeColour</button>
+
+        <div id="container">
+        <p id="first">text hello</p>
+        <p id="second"> hello</p>
+        <p id="third">ho where r u </p>     
+        </div>
+
+        <h2 onclick="this.innerHTML='oops  clicked'">click</h2>
+        <h1 onclick="this.innerHTML=alert('heyy alert')">clickuu</h1>
+        <h2 onclick="changetext(this)">clickme</h2>
+        <h3 onclick="displaydate()">try it </h3>
+        <p id="id"></p>
+        <input type="text" id="fname" oninput="input()"><br>
+        <br>
+        <input type="text" id="lname" onchange="change()"><br>
+        <br>
+        <div onmouseover="mouseover(this)"onmouseout="mouseout(this)"
+            style="background-color:green;width:120px;height:100px;padding: 30px;">welcome</div><br>
+            <br>
+        <div onmousedown="down(this)"onmouseup="up(this)"
+            style="background-color: red;width: 200px;height: 40px;font-size: large;">hii</div>
+
+
+            <button id="but">date</button>
+            <p id="para"></p>
+            <button id="button1">alertbutton</button><br>
+            <br>
+            <button id="button2">alerts3</button><br>
+            <br>
+            <button id="button3">mouseoverandmouseout</button>
+            <p id="four"></p>
+            <button id="fourth">try it</button>
+            <p id="demo"></p> 
+            <div id="contain">
+            <p id="paragraph"></p>
+            <button id="btn"onClick="remove()">click</button>
+            </div>
+
+           
+    <script>
+        //DOM methods
+       let  a= document.getElementById("one")                  // by id
+       console.log(a.textContent="ggggg")
+       document.getElementById("one").innerText="haa getha"   // we can usd innerText,innerHTML,textContent to change the text directly
+       let  b= document.getElementsByClassName("clas")        //by class
+       b[0].style.color="red"                                  //adding css
+       console.log(b[0].textContent)
+       let t=document.getElementsByClassName("clas")
+       t[1].innerHTML="oyy"
+        let c=document.getElementsByTagName("p")              //by tagename
+        console.log(c[1].textContent)
+        let d=document.querySelector("#one")                  //by query selector
+        console.log(d.textContent)
+        let e=document.querySelectorAll(".clas")             //by query selector all
+        e.forEach((item)=>console.log(item.textContent))
+        let f=document.querySelectorAll(".clas")
+        console.log(f[2].textContent)
+
+        //DOM DOcuments
+        console.log(document.title)
+        console.log(document.body)
+        console.log(document.body.innerHTML)
+        console.log(document.domain)
+        console.log(document.head)
+        console.log(document.currentScript)
+        console.log(document.URL)
+        console.log(document.cookie)
+        console.log(document.links)
+        console.log(document.readyState)
+        console.log(document.documentElement)
+        console.log(document.forms)
+        console.log(document.images)
+        console.log(document.doctype)
+        console.log(document.children)
+        document.write("hello ghasri how are you")
+        const para=document.createElement("a")
+        para.textContent="this a new paragraph"
+        console.log(para)     //para lo em vundi ani print chestunna
+        const neww=document.getElementById("one")
+        console.log("before append",neww)   //appendchild comment chese edi run cheye or else output lo diff kanipiyadu
+        neww.appendChild(para)
+        console.log("after append",neww)   //append ayyindi kanipistade
+        let z= neww.removeChild(para)   
+        console.log(z)                   //remove ayyina matter ni return chestade parent ni return cheyadu      
+        console.log(neww.contains(para)) // output false 
+        const variable=document.getElementById("one")
+        variable.remove()
+        console.log(document.getElementById("one"))
+        
+       //Dom form
+        document.getElementById("form").addEventListener("submit",function(){
+            let uname=this.username.value;
+            let pass=this.password.value;
+            if(uname===""||pass===""){
+                alert("please fill all details")
+            }
+            else{
+                alert("user Login successful")
+            }
+        })
+        //Dom CSs
+    function colour(){
+       let a= document.getElementById("color")
+       a.style.color="green";
+       a.style.backgroundColor="yellow";
+       a.style.fontSize="bold";
+    }
+    // DOM nodes
+    const g=document.getElementById("container")
+    console.log(g.firstElementChild.textContent)
+    console.log(g.lastElementChild.textContent)
+    console.log(g.parentNode.textContent)
+    console.log(g.parentElement.textContent)
+    //console.log(g.nextSibling.textContent)
+
+     // DOM Events
+
+function changetext(id){
+    id.innerHTML="hooo clicked"
+
+}
+function displaydate(){
+    document.getElementById("id").innerHTML=Date()
+
+}
+function input(){
+   let a=document.getElementById("fname")
+   a.value=a.value.toUpperCase();
+}
+function change(){
+   let a=document.getElementById("lname")
+   a.value=a.value.toUpperCase();
+}
+function mouseover(obj){
+    obj.innerHTML="welcome"
+
+}
+function mouseout(objectu){
+    objectu.innerHTML="logout"
+
+}
+function down(obj){
+    obj.style.backgroundColor="blue"
+    obj.innerHTML="geetha"
+
+}
+function up(obj){
+    obj.style.backgroundColor="red"
+    obj.innerHTML="hiii"
+}
+
+//DOM event listeners
+
+document.getElementById("but").addEventListener("click",displaydate)
+function displaydate(){
+    document.getElementById("para").innerHTML=Date();
+}
+document.getElementById("button1").addEventListener("click",function(){
+    alert("Hey clicked!!!")
+})
+let x=document.getElementById("button2")
+x.addEventListener("click",function(){alert("hello")})
+x.addEventListener("click",function(){alert("you clicked")})
+x.addEventListener("click",()=>{alert("hmm")})
+
+let y=document.getElementById("button3")
+y.addEventListener("mouseover",function1)
+y.addEventListener("mouseout",function2)
+
+function function1(){
+    document.getElementById("four").innerHTML="welcome<br>"
+}
+function function2(){
+    document.getElementById("four").textContent="hello<br>"
+}
+let p1=4
+let p2=5
+document.getElementById("fourth").addEventListener("click",function(){
+    myfunction(p1,p2)
+    function myfunction(a,b){
+        document.getElementById("demo").innerHTML=a*b
+    }
+})
+document.getElementById("contain").addEventListener("mousemove",function1)
+function function1(){
+    document.getElementById("paragraph").innerHTML=Math.random()
+}
+function remove(){
+    document.getElementById("contain").removeEventListener("mousemove",function1)
+}
+
+    </script>
+</body>
+</html>
