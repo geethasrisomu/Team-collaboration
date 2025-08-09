@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loops</title>
+</head>
+<body>
+    <script>
+        //using objects
+        let obj={
+            name:"geetha",
+            age:55,
+            city:"hyd",
+        }
+       
+      let a=Object.entries(obj)
+        for(i=0;i<a.length;i++){
+             console.log(a[i])
+        // let[key,value]=a[i]   //if we want to print in key value pair format use this code
+        // console.log(key,":",value)
+        }
+
+     //for in loop
+     for(let j in obj){
+        // console.log(obj[j])  //only values ni print chestade
+        console.log(j,":",obj[j])//key and values ni print chestade
+     }
+
+     //for of
+     for(let [key,value] of Object.entries(obj)){
+        console.log(key,":",value)
+     }
+      let hh="geetha"
+     for(let k of hh){
+        console.log(k)   //output in single character in column wise
+     }
+
+     //forEach
+     Object.entries(obj).forEach(([key,value])=>{
+        console.log(key,":",value)
+     })
+
+     //using arrays
+     let arr=["hyd",66,"geetha",true,2]
+     for(e=0;e<arr.length;e++){
+        console.log(arr[e])
+     }
+   //   for(let q in arr){
+   //      console.log(arr[q])
+   //   }
+   //   for(let w of arr){
+   //      console.log(w)
+   //   }
+   //   arr.forEach(data=>{
+   //      console.log(data)
+   //   })
+
+    </script>
+</body>
+</html>
