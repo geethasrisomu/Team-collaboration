@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+
+<script>
+    //callback functions
+    //synchronous callback
+    function one(a,b){
+        return a*b
+    }
+    function two(callback){
+        let c=callback(3,4)
+        console.log(c)
+    }
+    two(one)
+    
+    //asynchronous callback
+    function three(data){
+      console.log("Data:",data)
+    }
+    function four(callback1){
+        setTimeout(()=>{
+            callback1("geetha")
+        },1000)
+    }
+    four(three)
+    //Anonymous callback
+    function fetch(callback2){
+        let data="hello geetha"
+        callback2(data)
+    }
+    fetch(function(data){
+        console.log(data)
+    });
+    //promises
+    let data=new Promise(function(resolve,reject){
+        let success=true;     //let success=false
+        if(success){
+            resolve("hey its done")
+        }
+        else{
+            reject("its fail")
+        }
+    })
+        data .then(function(result){  //using function
+            console.log(result)
+        })
+        data .catch((error)=> console.log(error))  //using arrow function
+        //another example
+        let checkeven=new Promise((resolve,reject)=>{
+            let number=4
+            if(number%2==0)resolve("is even")
+            else reject("not even")
+        });
+        checkeven
+        .then((result)=>console.log(result))
+        .catch((error)=>console.log(error))
+        //using expression
+        let dataa=new Promise(function(resolve,reject){
+            setTimeout(()=>{
+                resolve("yes resolved")
+                reject("its rejected")
+            },2000);
+        });
+        dataa.then((result)=>console.log(result))
+        dataa.catch((error)=>console.log(error))
+        //using function
+        function funname(){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve("yeppp!!!")
+                    reject("fail!!!")
+                });
+            });
+        }
+        funname()
+        .then((result)=>console.log(result))
+        .catch((error)=>console.log(error))
+   //syntax of async
+   async function functionname(){
+   try{
+    let response=await fetch("url")
+    let data=response.json()
+    console.log(data)
+   }
+   catch(error){
+    console.log(error)
+   }
+}
+//example
+function fun(){
+   return new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            let eating =true;
+            if (eating)resolve("ha eating")
+            else reject("nope eating")    
+        }, 1000);
+    })
+
+}
+async function getdata(){
+    try{
+      console.log("fetching data")
+      const a=await fun()
+      console.log(a)
+    }
+    catch(error){
+        console.log(error)
+    }
+
+}
+getdata()
+
+//await inside for of loop
+function delaymessages(msg,delay){
+    return new Promise((resolve)=>{
+        setTimeout(()=>resolve(msg),delay)
+    })
+
+}
+async function gettingdata(){
+    const messages=[
+        delaymessages("hii",1000),
+        delaymessages("how are you",1500),
+        delaymessages("getha",2000),
+        delaymessages("sri",2500)  
+    ];
+    for (let i of messages){
+        const variable=await i
+        console.log(variable)
+    }
+
+}
+gettingdata();
+
+
+</script>
+</html>
