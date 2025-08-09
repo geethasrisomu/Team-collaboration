@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //function definition
+        function name(){
+            console.log("hey hello")
+        }
+        name()
+        //with parameters
+        function name1(a,b){
+            console.log(a+b)
+        }
+        name1(3,4)
+        //with default parameters
+        function name2(a,b=6){
+            console.log(a+b)
+        }
+        name2(3)
+        //with rest operator         // we can also use array here 
+        function name3(...name3){   // function name3([...name3]){
+            console.log(name3)      // console.log(name3)
+        }                           // }
+        name3(3,4,5)                // name3([3,4,5])
+        //with Expression
+        let a= function(h){
+            console.log(h*h)
+        }
+        a(5)
+        //Arrow Function
+        const arr=(x)=>x*x
+        console.log(arr(7))
+        //Anonymus Function
+        setTimeout(function(){
+            console.log("geetha")  //with function
+        },1000)
+        setTimeout(()=>{
+            console.log("srisomu")  //with arrow Function
+        },2000)
+        //callback Function
+        function one(){
+            console.log("hey geetha")
+        }
+        function two(a,b,callback){
+            console.log(a+b)
+            callback()
+
+        }
+        two(3,4,one)
+        //another example
+        function three(a,b){
+            console.log(a+b)
+        }
+        function four(hold){
+            hold(3,4)
+        }
+        four(three)
+        //another exmple
+        function greet(value){
+            console.log(`hii`,value)
+        }
+        function user(cback){
+            cback("geethasrisomu")
+        }
+        user(greet)
+       // constructor Function Call
+        function person(nam,age){
+            this.nam=nam;
+            this.age=age;
+        }
+        let p1=new person("geeth",65)
+        console.log(p1.nam)
+        console.log(p1.age)
+        
+        //Method call(Function inside an object)
+        let objvalues={
+           personname:"sri",
+            age:66,
+            details:function(){     //we can use this methods also-> // details(){    //details:()=>{
+                console.log( `hi ${this.personname} ur age is ${this.age} right`)
+            }
+        }
+            objvalues.details()
+
+        //Function parameter array
+        function fun([a,b]){     //if we return this then the code is
+            console.log(a+b)   //return a+b
+        }                     //}
+        fun([3,4])           //console.log(fun([3,4]))
+
+        //function parameter object
+        function objects({word,age}){
+            console.log(word,age)
+        }
+        objects({word:"geetha",age:77})
+
+       //using Function call,Function Apply,Function Bind
+        function personn(namee,age,city){
+            console.log("my  name is" , namee ,"and age is", age ,"and city",this.city)
+        }
+        const obj={city:"hyderabad"}
+        personn.call(obj,"geetha",45)
+        personn.apply(obj,["sri",55])//syntax:func.apply(thisArg, [argsArray]) ->we pass data in array form 
+        let bindval=personn.bind(obj,"somu",88)//syntax:let boundFunction = originalFunction.bind(thisArg, arg1, arg2, ...) 
+        bindval()//bind use chestey adhi value ni store chestade but return cheyadu so manam oka variable lo save cheskuni then we call it 
+        
+        //using apply method passing arguments in array
+        function one(a,b,c){
+            console.log(a+b+c)
+        }
+        let numbers=[1,2,3]
+        one.apply(null,numbers)
+         //finding maximum or minimum number using apply method
+        let number=[2,6,9,5]
+        let x=Math.max.apply(null,number)
+        console.log(x)
+        //loops
+        let namesof=["geetha","sri","somu"]
+         function forloop(names){    //using for loop
+            console.log("hi",names)
+         }
+         //for loop
+         for (i=0;i<namesof.length;i++){
+            forloop(namesof[i])
+         }
+         //forof
+         let nums=[1,2,4,5]
+         function funn(n){
+            console.log(n*n)
+         }                            //using for in loop
+         for (let value of nums){     // for(let value in nums)
+            funn(value)               //funn(nums[value])
+         }
+         //For Each
+         let somenums=[2,5,6]
+         function square(n){
+            console.log(n*n)
+         }
+         somenums.forEach(square)
+         //using Functions in map
+         let values=[1,2,3]
+         function mapusing(n){
+            return n*n
+         }
+         let b=values.map(mapusing)
+         console.log(b)
+         //using Filter 
+         let agenums=[55,18,30,1,5,7]
+         function ages(age){
+            return age>=18
+         }
+         let val=agenums.filter(ages)
+         console.log(val)
+          
+         //function closure
+          function outerfunction(){
+            let pname="geeth"
+              function innerfunction(){
+                 console.log("hello",pname)
+          }
+          return innerfunction
+        }
+          let greets=outerfunction()
+          greets()
+
+
+    </script>
+</body>
+</html>
