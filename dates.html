@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dates</title>
+</head>
+<body>
+    <script>
+        //Date Formats
+        console.log(new Date())
+        console.log(new Date("2024-05-27"))//syntax:("YYYY/MM/DD" )
+        console.log(new Date("2015-07"))
+        console.log(new Date("2015"))
+        console.log(new Date("27/12/2003"))//invalid date bcoz syntax("MM/DD/YYYY")
+        console.log(new Date("12/27/2003"))
+        console.log(new Date("mar 25 2005"))
+        console.log(new Date("25 dec 2005"))
+        console.log(new Date("march 25 2005"))
+        console.log(new Date("MARCH ,25, 2005"))//commas ignored and case insensitive
+        console.log(Date.parse("feb 14,2009"))//1234549800000(Date.parse() returns the number of milliseconds between the date and January 1, 1970:)
+
+        const d=new Date()
+        console.log(d.toString())//Sun Aug 10 2025 21:02:07 GMT+0530 (India Standard Time)
+        console.log(d.toDateString())//Sun Aug 10 2025
+        console.log(d.toTimeString())//21:02:22 GMT+0530 (India Standard Time)
+        console.log(d.toISOString())//2025-08-10T15:32:33.039Z
+        console.log(d.toLocaleDateString())//10/8/2025
+        console.log(d.toLocaleString())//10/8/2025, 9:02:52 pm
+
+        //get methods
+        const D=new Date()
+        console.log(D.getFullYear())
+        console.log(D.getMonth())
+        console.log(D.getDate())
+        console.log(D.getDay())
+        console.log(D.getHours())
+        console.log(D.getMinutes())
+        console.log(D.getSeconds())
+        console.log(D.getMilliseconds())
+        console.log(D.getTime())
+
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        const c=new Date("2004-09-28")
+        console.log(months[c.getMonth()])
+
+        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const e=new Date()
+        console.log(days[e.getDay()])
+
+        //set methods
+         const f=new Date("2016-05-30")
+         f.setFullYear(2021,11,20)
+         console.log(f)
+         console.log(f.getDate())
+         f.setMonth(1)
+         console.log(f)
+         f.setDate(17)
+         console.log(f)
+        f.setHours(12)
+         console.log(f)
+         f.setMinutes(30)
+         console.log(f)
+         f.setSeconds(45)
+         console.log(f)
+
+    </script>
+    
+</body>
+</html>
