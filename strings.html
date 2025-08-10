@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings</title>
+</head>
+<body>
+    <script>
+        // Three ways to declare String
+        let name="Geetha";
+        let place='India';
+        let msg=`Hello!`;     //(Template string)//allow multiline  strings and variable using ${} 
+
+        //String Methods (camelcase is used to keywords)
+        //String methods return a new string .They dont modify the original string
+        //Strings are immutable :cannot be changed, only replaced
+        let names="geetha sri somu"
+        console.log(names.length)    //String Length
+        console.log(names.charAt(2)) //charAt()
+        console.log(names.charCodeAt(1)) //charCodeAt() returns UTF-16 code of the character
+        console.log(names.codePointAt(5)) //codePointAt() returns unicode point at the position
+        console.log(names.at(2))  //updated and accepts negative index also 
+        console.log(names.at(-2))
+        console.log(names.charAt(-2))   //doestnot accept negative index
+        console.log(name[2]) //looks like array but donot perform like array
+        name[2]="s"     // error chupiyadu and change kuda cheyadu
+        console.log(names)
+        console.log(name.concat(" ",place)) 
+        console.log(name.concat("bagunava"))
+
+        let fruits="Apple ,Banana, mango"
+        console.log(fruits.slice(2,8)) //syntx:(start,end)
+        console.log(fruits.slice(-13))  //output: Banana, mango//negative kuda accept  chestade end of the string nunchi count chestade 13 letters
+        console.log(fruits.slice(-13,-7))//output:banana
+
+        console.log(fruits.substring(7,13))//(start,end)
+        console.log(fruits.toUpperCase())
+        console.log(fruits.toLowerCase())
+
+        console.log(fruits.isWellFormed()) //output:true
+        let text="Hello World\uD800"
+        console.log(text.isWellFormed()) //output:false  
+        console.log(text.toWellFormed())  //output:Hello World� //lone surrogates are replaced with unicode replacement character
+
+        let word="   Hey Geetha Hi!!    "
+        console.log(word.trim())
+        console.log(word.trimEnd())
+        console.log(word.trimStart())
+
+        let num="hh";
+        console.log(num.padStart(4,"0")) //output:00hh
+        console.log(num.padEnd(4,"X")) //output:hhXX
+        let number=7
+        // console.log(number.padStart(4,"0")) 
+        //typeError padStart and padEnd string methods sso numbers medha work avavu anduke number ni string loki convert cheskovali
+        let convert=number.toString()
+        console.log(convert.padStart(4,"0"))
+
+        console.log(num.repeat(2))///output:hhhh syntax:repeat(count)
+
+        //replaces the first match only and it is case sensitive
+       let some="welcome to page welcome"
+       console.log(some.replace("welcome","GoodBye")) //output:GoodBye to page welcome 
+       console.log(some.replace(/WELCOME/i,"goodBye"))//using regex
+
+       console.log(some.replaceAll("welcome","GoodBye"))//output:GoodBye to page GoodBye
+       console.log(some.replaceAll(/welcome/g,"Goodbyeeeee"))//using regex
+
+       //converting String to an ARRAY
+       console.log(some.split(" "))//['welcome', 'to', 'page', 'welcome']//spaces vunna chota split cheyye 
+
+       console.log(some.split(""))//['w', 'e', 'l', 'c', 'o', 'm', 'e', ' ', 't', 'o', ' ', 'p', 'a', 'g', 'e', ' ', 'w', 'e', 'l', 'c', 'o', 'm', 'e'] //each character ni split cheye
+
+       console.log(some.split(",")) //['welcome to page welcome']//comma vunna chota split cheye ikkada commas emi leyvu so mottam ok word la consider cheskundi 
+
+       let example="geetha,somu,sri"
+       console.log(example.split(","))//['geetha', 'somu', 'sri']
+
+       console.log(some.split("|"))//['welcome to page welcome'] //| vunna chota split cheyye 
+
+      //String Search Methods
+
+      let text1="longbow technologies private limited private"
+      //indexof yeppudu forward search chestade lastindexof yeppudu backward nunchi search chestade
+      console.log(text1.indexOf("private")) //gives 21 
+      console.log(text1.lastIndexOf("private")) //gives 37 (last occurence vunna private index ni istundi)
+
+      console.log(text1.indexOf("private",35))//37 (37 index nunchi start cheymani cheptunam )
+      console.log(text1.lastIndexOf("private",25)) //gives 21  (25 index nunchi start chestade back ki chustade anduke 21 ni return chestade )
+
+      console.log(text1.search("private"))//21
+      console.log(text1.search(/private/))//21
+
+      let text2="The rain in SPAIN stays mainly in the plain";
+      console.log(text2.match("ain"))
+      console.log(text2.match(/ain/))
+      console.log(text2.match(/ain/g)) //global search
+      console.log(text2.match(/ain/gi)) //global search with case sensitive
+
+    //   let text3="I love cats. Cats are very easy to love. Cats are very popular.";
+    //   console.log([...text3.matchAll("Cats")])
+    //   console.log([...text3.matchAll(/Cats/g)]) //global search
+    //   console.log([...text3.matchAll(/Cats/gi)]) //global search with case sensitive
+
+    let text4="Hello world, welcome to the universe";
+    console.log(text4.includes("world"))//true
+    console.log(text4.includes("world",12))//false (searchvalue,position)
+
+    console.log(text4.startsWith("Hello"))//true
+    console.log(text4.startsWith("world",5))//false
+    console.log(text4.startsWith("world",6))//true
+
+    console.log(text4.endsWith("universe"))//true
+    console.log(text4.endsWith("universe",14))//false Check if the 14 first characters of a string ends with "universe"
+    </script>
+  
+</body>
+</html>
