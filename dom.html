@@ -6,63 +6,14 @@
     <title>Dom</title>
 </head>
 <body>
-    <h1>hey geetha</h1>
+     <!-- DOM methods -->
+
+    <!-- <h1>hey geetha</h1>
     <p id="one">yess</p>
     <p class="clas">hii </p>
     <p class="clas"> how </p>
     <p class="clas">are you</p>
-
-    <form id="form">
-        <input  type="text" name="username" placeholder="Enter your name"/><br>
-        <br>
-        <input  type="password"name="password"placeholder="Enter your password"/><br>
-        <br>
-        <input type="submit" value="login">
-    </form>
-
-    <p id="color">i want to change my colour</p>
-    <button onclick="colour()">ChangeColour</button>
-
-        <div id="container">
-        <p id="first">text hello</p>
-        <p id="second"> hello</p>
-        <p id="third">ho where r u </p>     
-        </div>
-
-        <h2 onclick="this.innerHTML='oops  clicked'">click</h2>
-        <h1 onclick="this.innerHTML=alert('heyy alert')">clickuu</h1>
-        <h2 onclick="changetext(this)">clickme</h2>
-        <h3 onclick="displaydate()">try it </h3>
-        <p id="id"></p>
-        <input type="text" id="fname" oninput="input()"><br>
-        <br>
-        <input type="text" id="lname" onchange="change()"><br>
-        <br>
-        <div onmouseover="mouseover(this)"onmouseout="mouseout(this)"
-            style="background-color:green;width:120px;height:100px;padding: 30px;">welcome</div><br>
-            <br>
-        <div onmousedown="down(this)"onmouseup="up(this)"
-            style="background-color: red;width: 200px;height: 40px;font-size: large;">hii</div>
-
-
-            <button id="but">date</button>
-            <p id="para"></p>
-            <button id="button1">alertbutton</button><br>
-            <br>
-            <button id="button2">alerts3</button><br>
-            <br>
-            <button id="button3">mouseoverandmouseout</button>
-            <p id="four"></p>
-            <button id="fourth">try it</button>
-            <p id="demo"></p> 
-            <div id="contain">
-            <p id="paragraph"></p>
-            <button id="btn"onClick="remove()">click</button>
-            </div>
-
-           
     <script>
-        //DOM methods
        let  a= document.getElementById("one")                  // by id
        console.log(a.textContent="ggggg")
        document.getElementById("one").innerText="haa getha"   // we can usd innerText,innerHTML,textContent to change the text directly
@@ -79,7 +30,177 @@
         e.forEach((item)=>console.log(item.textContent))
         let f=document.querySelectorAll(".clas")
         console.log(f[2].textContent)
+    </script> -->
 
+  <!-- Dom form -->
+
+    <!-- <form id="form">
+        <input  type="text" name="username" placeholder="Enter your name"/><br>
+        <br>
+        <input  type="password"name="password"placeholder="Enter your password"/><br>
+        <br>
+        <input type="submit" value="login">
+    </form>
+    <script>
+      
+        document.getElementById("form").addEventListener("submit",function(){
+            let uname=this.username.value;
+            let pass=this.password.value;
+            if(uname===""||pass===""){
+                alert("please fill all details")
+            }
+            else{
+                alert("user Login successful")
+            }
+        })
+    </script> -->
+
+ <!-- Dom CSs -->
+
+    <!-- <p id="color">i want to change my colour</p>
+    <button onclick="colour()">ChangeColour</button>
+    <script>
+         
+    function colour(){
+       let a= document.getElementById("color")
+       a.style.color="green";
+       a.style.backgroundColor="yellow";
+       a.style.fontSize="bold";
+    }
+    </script> -->
+
+      <!-- DOM nodes -->
+
+        <!-- <div id="container">
+        <p id="first">text hello</p>
+        <p id="second"> hello</p>
+        <p id="third">ho where r u </p>     
+        </div>
+        <script>
+    const g=document.getElementById("container")
+    console.log(g.firstElementChild.textContent)
+    console.log(g.lastElementChild.textContent)
+    console.log(g.parentNode.textContent)
+    console.log(g.parentElement.textContent)
+    //console.log(g.nextSibling.textContent)
+
+        </script> -->
+
+
+         <!-- DOM Events -->
+
+         
+        <!-- <h2 onclick="this.innerHTML='oops  clicked'">click</h2>
+        <h1 onclick="this.innerHTML=alert('heyy alert')">clickuu</h1>
+        <h2 onclick="changetext(this)">clickme</h2>
+        <h3 onclick="displaydate()">try it </h3>
+        <p id="dem"></p>
+        <input type="text" id="fname" oninput="input()"><br>
+        <br>
+        <input type="text" id="lname" onchange="change()"><br>
+        <br>
+        <div onmouseover="mouseover(this)"onmouseout="mouseout(this)"
+            style="background-color:green;width:120px;height:100px;padding: 30px;">welcome</div><br>
+            <br>
+        <div onmousedown="down(this)"onmouseup="up(this)"
+            style="background-color: red;width: 200px;height: 40px;font-size: large;">hii</div>
+        <script>
+                function changetext(hold){
+                    hold.innerHTML="hooo clicked"
+
+                }
+                function displaydate(){
+                    document.getElementById("dem").innerHTML=new Date()
+
+                }
+                function input(){
+                let a=document.getElementById("fname")
+                a.value=a.value.toUpperCase();
+                }
+                function change(){
+                let a=document.getElementById("lname")
+                a.value=a.value.toUpperCase();
+                }
+                function mouseover(obj){
+                    obj.innerHTML="<b>welcome</b>"
+
+                }
+                function mouseout(objectu){
+                    objectu.innerHTML="logout"
+
+                }
+                function down(obj){
+                    obj.style.backgroundColor="blue"
+                    obj.innerHTML="geetha"
+
+                }
+                function up(obj){
+                    obj.style.backgroundColor="red"
+                    obj.innerHTML="hiii"
+                }
+
+        </script> -->
+
+            <!-- <button id="but">date</button>
+            <p id="para"></p>
+            <button id="button1">alertbutton</button><br>
+            <br>
+            <button id="button2">alerts3</button><br>
+            <br>
+            <button id="button3">mouseoverandmouseout</button>
+            <p id="four"></p>
+            <button id="fourth">try it</button>
+            <p id="demo"></p> 
+            <div id="contain">
+            <p id="paragraph"></p>
+            <button id="btn"onClick="remove()">remove</button>
+            </div>
+            <script>
+                //DOM event listeners
+
+                document.getElementById("but").addEventListener("click",displaydate)
+                function displaydate(){
+                    document.getElementById("para").innerHTML=Date();
+                }
+                document.getElementById("button1").addEventListener("click",function(){
+                    alert("Hey clicked!!!")
+                })
+                let x=document.getElementById("button2")
+                x.addEventListener("click",function(){alert("hello")})
+                x.addEventListener("click",function(){alert("you clicked")})
+                x.addEventListener("click",()=>{alert("hmm")})
+
+                let y=document.getElementById("button3")
+                y.addEventListener("mouseover",fun1)
+                y.addEventListener("mouseout",function2)
+
+                function fun1(){
+                    document.getElementById("four").innerHTML+="\nwelcome<br>"
+                }
+                function function2(){
+                    document.getElementById("four").innerHTML+="\nhello<br>"
+                }
+                let p1=4
+                let p2=5
+                document.getElementById("fourth").addEventListener("click",function(){
+                    myfunction(p1,p2)
+                    function myfunction(a,b){
+                        document.getElementById("demo").innerHTML=a*b
+                    }
+                })
+                document.getElementById("contain").addEventListener("mousemove",function1)
+                function function1(){
+                    document.getElementById("paragraph").innerHTML=Math.random()
+                }
+                function remove(){
+                    document.getElementById("contain").removeEventListener("mousemove",function1)
+                }
+
+            </script> -->
+
+
+           
+    <!-- <script>
         //DOM DOcuments
         console.log(document.title)
         console.log(document.body)
@@ -110,109 +231,12 @@
         const variable=document.getElementById("one")
         variable.remove()
         console.log(document.getElementById("one"))
+
+    </script> -->
+
+
+    <Script>
         
-       //Dom form
-        document.getElementById("form").addEventListener("submit",function(){
-            let uname=this.username.value;
-            let pass=this.password.value;
-            if(uname===""||pass===""){
-                alert("please fill all details")
-            }
-            else{
-                alert("user Login successful")
-            }
-        })
-        //Dom CSs
-    function colour(){
-       let a= document.getElementById("color")
-       a.style.color="green";
-       a.style.backgroundColor="yellow";
-       a.style.fontSize="bold";
-    }
-    // DOM nodes
-    const g=document.getElementById("container")
-    console.log(g.firstElementChild.textContent)
-    console.log(g.lastElementChild.textContent)
-    console.log(g.parentNode.textContent)
-    console.log(g.parentElement.textContent)
-    //console.log(g.nextSibling.textContent)
-
-     // DOM Events
-
-function changetext(id){
-    id.innerHTML="hooo clicked"
-
-}
-function displaydate(){
-    document.getElementById("id").innerHTML=Date()
-
-}
-function input(){
-   let a=document.getElementById("fname")
-   a.value=a.value.toUpperCase();
-}
-function change(){
-   let a=document.getElementById("lname")
-   a.value=a.value.toUpperCase();
-}
-function mouseover(obj){
-    obj.innerHTML="welcome"
-
-}
-function mouseout(objectu){
-    objectu.innerHTML="logout"
-
-}
-function down(obj){
-    obj.style.backgroundColor="blue"
-    obj.innerHTML="geetha"
-
-}
-function up(obj){
-    obj.style.backgroundColor="red"
-    obj.innerHTML="hiii"
-}
-
-//DOM event listeners
-
-document.getElementById("but").addEventListener("click",displaydate)
-function displaydate(){
-    document.getElementById("para").innerHTML=Date();
-}
-document.getElementById("button1").addEventListener("click",function(){
-    alert("Hey clicked!!!")
-})
-let x=document.getElementById("button2")
-x.addEventListener("click",function(){alert("hello")})
-x.addEventListener("click",function(){alert("you clicked")})
-x.addEventListener("click",()=>{alert("hmm")})
-
-let y=document.getElementById("button3")
-y.addEventListener("mouseover",function1)
-y.addEventListener("mouseout",function2)
-
-function function1(){
-    document.getElementById("four").innerHTML="welcome<br>"
-}
-function function2(){
-    document.getElementById("four").textContent="hello<br>"
-}
-let p1=4
-let p2=5
-document.getElementById("fourth").addEventListener("click",function(){
-    myfunction(p1,p2)
-    function myfunction(a,b){
-        document.getElementById("demo").innerHTML=a*b
-    }
-})
-document.getElementById("contain").addEventListener("mousemove",function1)
-function function1(){
-    document.getElementById("paragraph").innerHTML=Math.random()
-}
-function remove(){
-    document.getElementById("contain").removeEventListener("mousemove",function1)
-}
-
-    </script>
+    </Script>
 </body>
 </html>

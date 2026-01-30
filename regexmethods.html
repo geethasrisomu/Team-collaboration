@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methods</title>
+</head>
+<body>
+    <script>
+        let text="apple,banana,apple"
+        console.log(text.match(/apple/g))   //get matches (array)
+        let matchall=text.matchAll(/apple/g)
+        console.log([...matchall])   //unlike match gives extra details aboyt every match
+        console.log(text.match(new RegExp("apple","g"))) 
+        console.log(text.replace(/apple/g,"mango")) //replace first one (or all with g)
+        console.log(text.replaceAll("apple","mango"))//no need to write g here it automacticaly replacesall
+        console.log(text.search(/apple/)) //find index of first match
+        console.log(text.search(/banana/))
+        console.log(text.split(",")) //comma vunna place lo separate chestade
+        
+
+    </script>
+    
+</body>
+</html>

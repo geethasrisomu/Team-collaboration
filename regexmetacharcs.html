@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metacharcs</title>
+</head>
+<body>
+    <script>
+        let text="Give 100% __!!"
+        console.log(text.match(/\d/g))   //	Matches Digits
+        console.log(text.match(/\D/g))   //Matches None Digits
+        console.log(text.match(/\w/g))   //Matches alphanumeric Word characters
+        console.log(text.match(/\W/g))   //	Matches None alphanumeric Word characters
+        console.log(text.match(/\s/g))   //Matches Spaces
+        console.log(text.match(/\S/g))   //Matches None Spaces
+
+        let txt="..Hello!\nworld.."
+        console.log(txt.match(/Hello./g)) //matches any character except \n,\r
+        console.log(/a.+c/.test("ahygyc"))
+        console.log(txt.match(/\./g))     //if u want dot literally
+
+       console.log(txt.match(/Hello!.world/))
+       console.log(txt.match(/Hello!.world/s)) //it matches everything
+
+       console.log(("dogs").match(/cats|dogs/))  // matches a or b
+       console.log(/dogs|cats/.test("dogs"))
+
+
+
+    </script>
+   
+</body>
+</html>

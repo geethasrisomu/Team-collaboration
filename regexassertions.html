@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assertions</title>
+</head>
+<body>
+    <script>
+        let text="Hello Welcome Helo"
+        console.log((/^H/).test(text))   //Matches the beginning of a string
+        console.log((/gee$/).test(text)) //Matches the beginning of a string
+        console.log((/\bHe/).test(text)) //Matches the beginning  of a word
+        console.log(text.match(/\bHe/g))
+        console.log((/l\b/).test(text))  //Matches the end of a word
+        console.log(text.match(/l\b/))
+        // console.log((/\Bll/).test(text))
+        // console.log(text.match(/\Bg/))
+       let x=/Hello(?= Welcome)/        //Matches the subsequent string
+       console.log(x.test(text))
+       console.log((/Hello(?= Welcome)/).test(text))
+
+       let y=/Hello(?! elcome)/       //	Matches NOT the subsequent string
+       console.log(y.test(text))
+
+       let z=/(?<=Hello) Welcome/     //Matches the previous string
+       console.log(z.test(text))
+
+        let m=/(?<!Hello) Welcome/    //Matches NOT the previous string
+       console.log(m.test(text))
+
+
+
+
+    </script>
+</body>
+</html>

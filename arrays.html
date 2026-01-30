@@ -37,6 +37,7 @@
         arr.copyWithin(2,0)                //copying elements
         console.log(arr) ;
         const arr2=[1,2,[3,4,[5,6]]];
+        console.log(arr2.flat(Infinity))
         console.log(arr2.flat());
         console.log(arr2.flat(2));
        console.log( arr2.flatMap(x=>[x,x*10]))
@@ -149,7 +150,7 @@
      console.log(allover10) 
 
      //some
-     let allover5=array5.some(value=>{   //checks if osme array values pass a test 
+     let allover5=array5.some(value=>{   //checks if some array values pass a test 
         return value>5
      })
      console.log(allover5)

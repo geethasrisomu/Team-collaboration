@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realtime Examples</title>
+</head>
+<body>
+    <script>
+        // //Example1:phone number
+        // let text="my number is:8765432997"
+        // console.log(text.match(/\b\d{10}\b/))
+
+        // //Example2:Email Address
+        // let text="contact me at geethasomu1233@gmail.com"
+        // console.log(text.match(/[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-z]{2,}/))
+
+        // //Example:3 Extract numbers from any text
+        // let text="order250 dish which costs 3000 rupees"
+        // console.log(text.match(/\d+/g))
+
+        // //Example:4 String contains letters
+        // let text="geethaSOMU"
+        // console.log((/^[a-zA-z]+$/).test(text))
+        
+        // //Example:5 Date 
+        // let text="today date is 27/12/2003"
+        // let re=/\b\d{2}\/\d{1,}\/\d{4}\b/
+        // console.log(text.match(re))
+
+        //Example:6 Password
+        let text="agethaRR@somu123#"
+        let re=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&*])[a-zA-Z\d!@#$%^&*]{3,}$/
+        console.log(text.match(re))
+    </script>
+</body>
+</html>

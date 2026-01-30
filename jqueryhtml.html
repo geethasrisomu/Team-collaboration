@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jqueryhtml</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <!-- using get -->
+
+<!--     
+    <p id="demo">This is  a paragraph <b>Bold</b>letters</p>
+    <button id="showtext">Show Text</button>
+    <button id="showhtml">Show Html</button>
+
+    <input type="text" id="test"placeholder="ur name">
+    <button id="showval">Show valuee</button>
+
+    <p><a href="https://www.google.com/" id="href">google.com</a></p>
+    <button id="link">show href link</button>
+    <script>
+         $(function(){
+            $("#showtext").click(function(){
+                alert($("#demo").text())
+            })
+            $("#showhtml").click(function(){
+                alert($("#demo").html())
+            })
+        })
+
+        $(function(){
+            $("#showval").click(function(){
+                alert($("#test").val())
+            })
+        })
+
+        $(function(){
+            $("#link").click(function(){
+                alert($("#href").attr("href"))
+            })
+        })
+    </script> -->
+
+ 
+
+   <!-- using set -->
+
+<!-- 
+    <p id="para1">This is a paragraph</p>  
+    <p id="para2">another para graph</p>
+    <input id="input1" type="text"value="doraemon">
+    <button id="btn1">Show text</button>
+    <button id="btn2">Show html</button>
+    <button id="btn3">Show val</button>
+   
+    <p id="para3">doraemon is my <b>favourite</b> cartoon</p>
+    <button id="btn4">Show old/new text</button>
+    <p id="para4">doraemon is my <b>favourite</b> cartoon</p>
+    <button id="btn5">Show old/new html</button>
+   
+     <p><a href="https://www.w3schools.com/jquery/"id="para5">W3schools.com</a></p>
+     <button id="btn6">click me to go page</button>
+    <script>
+        //set
+      $(function(){
+        $("#btn1").click(function(){
+            $("#para1").text("<b>Helloworld!!</b>")
+        })
+        $("#btn2").click(function(){
+            $("#para2").html("<b>Helloworld!!</b>")
+        })
+        $("#btn3").click(function(){
+            $("#input1").val("tom and jerry")
+        })
+      })
+
+      //callback function
+      $(function(){
+        $("#btn4").click(function(){
+            $("#para3").text(function(index,orgtext){        //syntax:callback(index,currentvalue)
+                return"old text:"+orgtext +"and New text:Hello <b>world</b>( index:" +index+")"
+            })
+        })
+        
+        $("#btn5").click(function(){
+            $("#para4").html(function(index,orgtext){
+                return"old text:"+orgtext +"and New text:Hello <b>world</b>( index:" +index+")"
+            })
+        })
+      })
+
+      //setting atributes
+
+      $(function(){
+        $("#btn6").click(function(){
+           let link= $("#para5").attr("href")  
+           $("#para5").text(link)
+        // $("#para5").text(attr("href"))
+        })
+      })
+
+      $(function(){
+        $("#btn6").click(function(){
+           $("#para5").attr("href","https://www.w3schools.com/jquery/")  
+        })
+      })
+
+    </script>  -->
+
+    
+    <!-- add -->
+
+    <!-- <p >This is a paragraph</p>
+    <p >This is a paragraph</p>
+    <ol>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+    </ol>
+    <button id="but1">Append text</button>
+    <button id="but2">Append list items</button>
+
+    <button id="but3">Prepend text</button>
+    <button id="but4">Prepend list items</button>
+
+    <button id="but" onclick="but()">click it </button><br>
+
+    <img src="./doraemon.jpg"alt="doraemon"><br>
+    <button id="before">Insert before</button>
+    <button id="after">Insert After</button><br>
+
+
+    <img id="imgg"src="./doraemon.jpg"alt="doraemon"><br>
+    <button id="afterimg">Insert After</button>
+    <script>
+        // using append and prepend
+        $(function(){
+            $("#but1").click(function(){
+                $("p").append("<b>append matter</b>")
+            })
+            $("#but2").click(function(){
+                $("ol").append("<li>item4 append</li>")
+            })
+            $("#but3").click(function(){
+                $("p").prepend("<b>prepend matter</b>")
+            })
+            $("#but4").click(function(){
+                $("ol").prepend("<li>item prepend</li>")
+            })
+        })
+        //Adding several elements (append or prepend em ina use cheskovachu)
+        function but(){
+            var txt1=("<p>Text<p>") //creating element using html
+            var txt2=$("<p></p>").text("Text") //creating element using jquery
+            var txt3=document.createElement("p") //creating element using js model
+            txt3.textContent="text"
+            $("body").append(txt1,txt2,txt3)//append chestunam body loki
+        }
+
+        //using after and before
+        $(function(){
+            $("#before").click(function(){
+                $("img").before("<b>before</b>")
+            })
+             $("#after").click(function(){
+                $("img").after("<b>after</b>")
+            })
+        })
+        //using several elements(before and after both use cheyachu)
+        $(function(){
+            $("#afterimg").click(function(){
+                var text1=("<b>I</b>")//using html
+                var text2=$("<span></span>").text("loveeee")//using jquery
+                var text3=document.createElement("b")//using js dom
+                text3.textContent="doraemon"
+                $("#imgg").after(text1,text2,text3)//appending 
+            })
+        })
+    </script> -->
+
+     <!-- remove -->
+
+     <!-- <div style="width:300px;height:200px;border:3px solid black;background-color:yellow; ">
+        This a paragraph 
+        <p class="para1">Hey geetha </p>
+        <p class="para2">How are you</p>
+     </div>
+    <button id="remove">remove div block</button>
+    <button id="empty">Empty the div block</button>
+    <button id="rem">Remove particular elements</button>
+
+     <script>
+        // remove,empty,particular elements also removed
+        $(function(){
+            $("#remove").click(function(){
+                $("div").remove()
+            })
+            $("#empty").click(function(){
+                $("div").empty()
+            })
+            $("#rem").click(function(){
+                $("p").remove(".para1,.para2")
+            })
+        })
+
+     </script> -->
+
+
+     <!-- css classes -->
+
+     <!-- <h1>Geetha</h1>
+     <h2>somuuu</h2>
+     <p id="para">this one is the large one you know</p>
+     <div>this is the div element</div>
+     <button id="btn">Adding class</button>
+     <button id="remove">Remove styling</button>
+     <button id="toggle">Toggle (adding and removing)</button>
+     <style>
+        .blue{
+            color:blue;
+            background-color: #9eee6d;
+        }
+        .green{
+            color:green;
+
+        }
+        .bolding{
+            font-size:xx-large;
+            color:red
+        }
+        .styling{
+            color:rgb(233, 81, 107);
+            background-color: #c3f27e;
+        }
+        .bordering{
+            border:3px solid black;
+            
+        }
+
+     </style>
+     <script>
+        // adding classes 
+        $(function(){
+            $("#btn").click(function(){
+                $("h1,h2").addClass("blue") //applying styles to h1,h2 
+                $("#para").addClass("green")//applying style to using id 
+                $("div").addClass("bolding") //applying style to only div block
+            })
+        //removing styling    
+            $("#remove").click(function(){   
+                $("h1,h2").removeClass("blue") //remove styling to the group 
+                $("#para").removeClass("green")//remove styling using id 
+            })
+
+        //toggle (adding and removing)
+        $(function(){
+            $("#toggle").click(function(){
+                $("h1,h2,div,p").toggleClass("styling bordering") //adding two styles here
+
+            })
+        })
+        }) 
+     </script> -->
+
+     <!-- css -->
+     <!-- <p style="background-color: #ba8d23;">this is one</p>
+     <p style="background-color: #2ca45c;">this is two</p>
+     <p style="background-color: #6123cb;">this is three</p>
+     <button id="btn1">click to show bg color</button>
+     <button id="btn2">click to change colors</button>
+     <button id="btn3">click to see multiple styling</button>
+
+
+     <script>
+         $(function(){
+            $("#btn1").click(function(){
+                alert("background:"+$("p").css("background-color"))
+            })
+            
+         })
+
+          $(function(){
+            $("#btn2").click(function(){
+                $("p").css("background-color","pink" )   //singlee elment styling syntax:("property","value")
+             })
+
+             })
+
+             
+         $(function(){
+            $("#btn3").click(function(){
+                $("p").css({"background-color":"pink","font-size":"200%","border":"2px solid black" }) //multiple line styling({"property":"value","property":"value"})
+             })
+
+             })
+
+     </script> -->
+
+
+
+     <!-- dimensions -->
+
+     <!-- <div id="div1"></div>
+     <button id="btn">Click me to see details</button>
+     <style>
+        #div1{
+            width:300px;
+            height:300px;
+            padding:5px;
+            margin:10px;
+            border:3px solid black;
+            background-color: #9f73fd;
+        }
+     </style>
+
+    <script>
+        $(function(){
+            $("#btn").click(function(){
+               var txt=""
+               txt+="width:"+$("#div1").width()+"</br>"
+               txt+="height:"+$("#div1").height()+"</br>"
+               txt+="innnerwidth:"+$("#div1").innerWidth()+"</br>"
+               txt+="innerheight:"+$("#div1").innerHeight()+"</br>"
+               txt+="outerwidth:"+$("#div1").outerWidth()+"</br>"
+               txt+="outerheight:"+$("#div1").outerHeight()+"</br>" 
+               txt+="outerwidth:"+$("#div1").outerWidth(true)+"</br>"
+               txt+="outerheight:"+$("#div1").outerHeight(true)+"</br>" 
+             $("#div1").html(txt)
+            })
+        })
+
+        
+    </script> -->
+    </body>
+</html>

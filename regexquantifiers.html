@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantifiers</title>
+</head>
+<body>
+    <script>
+        let text="Hellooo world! Hello schools!!"
+        console.log(text.match(/o+/g))     //Matches at least one x
+        console.log(text.match(/lo*/g))    //Matches zero or more occurrences of x
+        console.log(text.match(/lo?/g))    //Matches zero or one occurrences of x
+
+        let txt="100,1000 or 100000?"
+        console.log(txt.match(/\d{4}/g))   //Matches n occurences of x
+        console.log(txt.match(/\d{3,4}/g)) //Matches from n to m occurences of x
+        console.log(txt.match(/\d{3,}/g))  //Matches n or more occurences of x
+
+
+    </script>
+    
+</body>
+</html>

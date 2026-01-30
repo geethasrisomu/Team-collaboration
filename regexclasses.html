@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>regexclasses</title>
+</head>
+<body>
+    <script>
+        let text="geethaaSOMU"
+        console.log(text.match(/[a]/g))
+        console.log(text.match(/[^a]/g))
+        console.log(text.match(/[ea]/g))
+        console.log(text.match(/[^ea]/g))
+        console.log(text.match(/[S]/g))
+        console.log(text.match(/[^S]/g))
+        console.log(text.match(/[A-Z]/g))
+
+        let txt="geetha1234"
+        console.log(txt.match(/[a-z]/g))
+        console.log(txt.match(/[^a-z]/g))
+        console.log(txt.match(/[0-9]/g))
+        console.log(txt.match(/[^0-9]/g))
+        console.log(txt.match(/[123]/g))
+       
+    </script>
+    
+</body>
+</html>

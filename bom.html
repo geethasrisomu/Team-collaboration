@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BOM</title>
 </head>
 <body>
     <button onclick="btn()">confirm</button>
@@ -20,72 +20,88 @@
 
     <script>
         //window properties
-        console.log(window.innerWidth)
-        console.log(innerHeight)
-        //window methods
-       let newwin=window.open("https://www.google.com","_blank","width=50 heigth=85"); 
-       newwin.close();
-       //window screen
-   console.log(screen.width)
-   console.log(screen.height)
-   console.log(screen.availHeight)
-   console.log(screen.availWidth)
-   console.log(screen.colorDepth)
-   console.log(screen.pixelDepth)
-   //window locations
-   console.log(window.location.href)
-   console.log(window.location.hostname)
-   console.log(window.location.pathname)
-   console.log(window.location.protocol)
-   //popup alerts
-    window.alert("hey hello")   
-    window.prompt("u are clicking ok")
-function btn(){
-    var txt;
-    if(confirm("ypu pressed")){
-        txt="ok"
-    }
-    else{
-        txt="cancel"
-    }
-    document.getElementById("demo").innerHTML=txt
-}
-function but(){
-    var txt;
-    let prom=prompt("enter you name")
-    if(prom==null ||prom==" "){
-        txt='cancel '
-    }
-    else{
-        txt="hello"+prom
-    }
-    document.getElementById("para").innerHTML=txt
-}
-//timingss
-let set;
-function settime(){
-   set=setTimeout(() => {
-        document.getElementById("sett").innerHTML="after 3 seconds"
-        
-    }, 3000);
-}
-function cleartime(){
-    clearTimeout(set)
-    document.getElementById("sett").innerHTML="clear all"
 
-}
- let interval;
- let count=0;
-function setinter(){
-    interval=setInterval(()=>{
-        count++
-        document.getElementById("clear").innerHTML="count:"+count
-    },1000)
-}
-function clearinter(){
-    clearInterval(interval)
-    document.getElementById("clear").innerHTML="clear interval"
-}
+        // console.log(window.innerWidth)
+        // console.log(window.innerHeight)
+
+        // console.log(screen.height)
+        // console.log(screen.width)
+
+        //window methods
+
+    //    let newwin=window.open("https://www.google.com","_blank","width=50 heigth=85"); 
+    //    newwin.close();
+
+       //window screen
+
+//    console.log(screen.width)
+//    console.log(screen.height)
+//    console.log(screen.availHeight)
+//    console.log(screen.availWidth)
+//    console.log(screen.colorDepth)
+//    console.log(screen.pixelDepth)
+
+   //window locations
+
+//    console.log(window.location.href)
+//    console.log(window.location.hostname)
+//    console.log(window.location.pathname)
+//    console.log(window.location.protocol)
+
+
+   //popup alerts
+
+    // window.alert("hey hello")   
+    // window.prompt("u are clicking ok")
+
+// function btn(){
+//     var txt;
+//     if(confirm("ypu pressed")){
+//         txt="ok"
+//     }
+//     else{
+//         txt="cancel"
+//     }
+//     document.getElementById("demo").innerHTML=txt
+// }
+// function but(){
+//     var txt;
+//     let prom=prompt("enter you name")
+//     if(prom==null ||prom==" "){
+//         txt='cancel '
+//     }
+//     else{
+//         txt="hello"+prom
+//     }
+//     document.getElementById("para").innerHTML=txt
+// }
+
+// //timingss
+
+// let set;
+// function settime(){
+//    set=setTimeout(() => {
+//         document.getElementById("sett").innerHTML="after 3 seconds"
+        
+//     }, 3000);
+// }
+// function cleartime(){
+//     clearTimeout(set)
+//     document.getElementById("sett").innerHTML="clear all"
+
+// }
+//  let interval;
+//  let count=0;
+// function setinter(){
+//     interval=setInterval(()=>{
+//         count++
+//         document.getElementById("clear").innerHTML="count:"+count
+//     },1000)
+// }
+// function clearinter(){
+//     clearInterval(interval)
+//     document.getElementById("clear").innerHTML="clear interval"
+// }
  
     </script>
     

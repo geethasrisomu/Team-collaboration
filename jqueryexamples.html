@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery examples</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <div id="container">
+    <form id="myform">
+        Name:<input type="text" id="name" ><br>
+        password:<input type="password" id="pass"><br>
+        <button id="button" type="submit">Submit</button>
+        <p id="para"></p>
+    </form>
+    </div>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        .container{
+            background-color: #b2eb6c;
+            width:300px;
+            height:100px;
+            border:2px solid black;
+            margin:10%;
+            text-align: center;
+            padding:10px;
+        }
+        .red{
+            background-color: #de3c3c;
+            color:white;
+        }
+        .blue{
+            background-color: #364dce;
+            color:white
+        }
+    </style>
+    <script>
+        $(function(){
+          
+            $("#container").addClass("container")
+            $("#button").mouseenter(function(){
+                $("#button").removeClass("blue").addClass("red")
+                $("#button").animate({fontSize:"120%"})
+            })
+             $("#button").mouseleave(function(){
+                $("#button").removeClass("red").addClass("blue")
+                $("#button").animate({fontSize:"100%"})
+            })
+            $("#button").click(function(e){
+            e.preventDefault()
+                
+                if($("#name").val().trim()===""||$("#pass").val()===""){
+                    $("#para").text("please fill all details")
+                    return      
+                }
+                // else{     
+                // alert('nameis:'+$("#name").val())
+                // }
+                confirm("Name:"+$("#name").val()+"\npassword:"+$("#pass").val())
+                alert("user login successfuly")
+                window.location.href="nextpage.html"
+            })
+         
+    //  $("#button")
+        })
+    </script>
+
+    
+</body>
+</html>

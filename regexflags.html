@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex</title>
+</head>
+<body>
+    <p id="para"></p>
+    <script>
+        
+        // ....global search...
+        let text="hey is hii Is this ok to all is?"
+        let re=/is/g;
+        let result=text.match(re)
+        // let result=re.exec(text)
+        // let result=re.test(text)
+        console.log(result)
+
+        // let text="Geethasomu is fom Is is"
+        // console.log(text.match(/is/g))
+        // console.log(text.match(/Is/i))
+        // console.log(text.match(/is/gi))
+
+        // console.log(text.match(re))
+        // console.log(text.match(re))
+        // console.log(text.match(re))
+        // console.log(re.exec(text))
+        // console.log(re.exec(text))
+        // console.log(re.exec(text))
+        // console.log(re.test(text))
+  
+        //....case insensitive....
+        // let text="hey is hii Is this ok to all is?"
+        // let re=/Is/i;
+        // // let re=new RegExp('Is',"g")     //another method
+        // let result=text.match(re)
+
+        //....d flag....has indices
+        // let text="hey is hii Is this ok to all is?"
+        // let re=/is/d
+        // let result=text.match(re)
+        // console.log(result)
+
+        // let textt="aabb"
+        // let result=textt.match(/(aa)(bb)/d)
+        // console.log(result)
+
+        //...s flag...
+        // let txt="hello\nworld"
+        // let result=txt.match(/hello.world/s) 
+        // console.log(result)
+
+        //....y flag sticky...
+        // let text="aa-aa-aa"
+        // // let result=text.match(/aa/g)
+        // let result=text.match(/aa/y)
+
+        // // let re=/aa/y
+        // // re.lastIndex=2
+        // // let result=text.match(re)
+
+        //....unicode flag....
+        // let text="䷀"
+        // let re=/\u{04DC0}/u
+        // // let result=re.test(text)
+        // let result=text.match(re)
+        // console.log(result)
+
+        //...m flag...
+        // let text="hello\nworld"
+        // let result=text.match(/^world$/m)
+        // console.log(result)
+
+
+        // document.getElementById("para").innerHTML=result
+    </script>
+    
+</body>
+</html>

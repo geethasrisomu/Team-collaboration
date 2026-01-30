@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome </title>
+</head>
+<body>
+    <style>
+        body{
+            width:100%;
+            height:100%;
+            padding:0;          
+        }
+        .wrapper{
+            width:100%;
+            padding:30px;        
+        }
+        .rowsizes{
+            display: flex;
+            flex-direction: row;
+            gap:30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .card{
+            padding:0;
+            width:300px;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+        }
+        .card img{
+            height:200px;
+            width:100%;
+            gap:10px;
+            border-radius: 50%;
+        }
+        .card img:hover{
+            transform: scale(1.05);
+        }
+        .title{
+            font-size: 30px;
+        }
+        .title:hover{
+            color:rgb(181, 44, 67)
+            
+        }
+        .logoutbutton{
+            background-color: red;
+            color:white;
+            font-size: 20px;
+            border-radius: solid,2px;
+            cursor:pointer;
+        }
+        button:hover{
+            background-color: blue;
+            transform: scale(1.05);
+        }
+    </style>
+    <h1 style="text-align: center;"><mark><i>**..Select tasty sea food items..**</i></mark></h1>
+    <button class=" logoutbutton"onclick="btn()"style="float:right">Logout</button>
+    <div class="wrapper">
+        <div class="rowsizes"id="row"></div>
+    </div>
+</body>
+<script>
+    function btn(){
+        window.location.href="login.html"
+    }
+   async function seafoodmeals(){
+    const url="https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood";
+        try{
+            const extracting=await fetch(url);
+            const converting=await extracting.json();
+            const meals=converting.meals;
+            const container=document.getElementById("row")
+            meals.forEach((meal) => {
+                const card=document.createElement("div")
+                card.className="card";
+                
+                const img=document.createElement("img")
+                img.src=meal.strMealThumb
+                img.alt="photo"
+
+                const title=document.createElement("div")
+                title.className="title";
+                title.innerText=meal.strMeal;
+
+                card.appendChild(img);
+                card.appendChild(title);
+                container.appendChild(card);               
+            });
+        }
+        catch(error){
+            console.log("Error fetching details:",error)
+
+        }
+
+    }
+    seafoodmeals();
+</script>
+</html>
